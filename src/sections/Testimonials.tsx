@@ -56,7 +56,7 @@ const Testimonials = () => {
         </div>
 
         {/* Quote Text */}
-        <blockquote className="reveal-item museo-headline text-white text-2xl md:text-3xl lg:text-4xl leading-relaxed mb-12">
+        <blockquote className="reveal-item museo-headline text-white text-xl md:text-3xl lg:text-4xl leading-relaxed mb-12">
           "{testimonialsConfig.quote}"
         </blockquote>
 

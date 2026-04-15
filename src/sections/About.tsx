@@ -124,10 +124,10 @@ const About = () => {
       {/* Gallery — overflow hidden to prevent parallax leaking into stats */}
       <div className="overflow-hidden">
         <div ref={galleryRef} className="relative max-w-7xl mx-auto px-4 lg:px-8 pb-16">
-          <div className="grid grid-cols-3 gap-4 lg:gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-5">
 
             {/* Column 1 — drifts up (reduced speed) */}
-            <div className="gallery-col space-y-4 lg:space-y-5 will-change-transform" data-speed="-80">
+            <div className="gallery-col space-y-6 lg:space-y-5 will-change-transform" data-speed="-80">
               {col1Images.map((img, i) => (
                 <div key={i} className="gallery-img-wrap overflow-hidden will-change-transform" data-offset={i === 0 ? "60" : "120"}>
                   <img src={img.src} alt={img.alt} className="w-full h-auto object-cover" style={{ aspectRatio: i === 0 ? '3/4' : '4/5' }} />
@@ -137,7 +137,7 @@ const About = () => {
             </div>
 
             {/* Column 2 — drifts down, starts offset */}
-            <div className="gallery-col space-y-4 lg:space-y-5 pt-20 lg:pt-32 will-change-transform" data-speed="100">
+            <div className="gallery-col space-y-6 lg:space-y-5 pt-12 md:pt-20 lg:pt-32 lg:block hidden will-change-transform" data-speed="100">
               {col2Images.map((img, i) => (
                 <div key={i} className="gallery-img-wrap overflow-hidden will-change-transform" data-offset={i === 0 ? "80" : "160"}>
                   <img src={img.src} alt={img.alt} className="w-full h-auto object-cover" style={{ aspectRatio: '3/4' }} />
@@ -147,7 +147,7 @@ const About = () => {
             </div>
 
             {/* Column 3 — drifts up faster */}
-            <div className="gallery-col space-y-4 lg:space-y-5 will-change-transform" data-speed="-120">
+            <div className="gallery-col space-y-6 lg:space-y-5 lg:block hidden will-change-transform" data-speed="-120">
               {col3Images.map((img, i) => (
                 <div key={i} className="gallery-img-wrap overflow-hidden will-change-transform" data-offset={i === 0 ? "40" : "140"}>
                   <img src={img.src} alt={img.alt} className="w-full h-auto object-cover" style={{ aspectRatio: i === 0 ? '4/5' : '3/4' }} />
@@ -161,11 +161,11 @@ const About = () => {
 
       {/* Stats — z-index above gallery to prevent overlap */}
       {aboutConfig.stats.length > 0 && (
-        <div ref={statsRef} className="relative z-10 max-w-7xl mx-auto px-8 lg:px-16 py-24 bg-[#050505]">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-white/10 pt-12">
+        <div ref={statsRef} className="relative z-10 max-w-7xl mx-auto px-8 lg:px-16 py-16 lg:py-24 bg-[#050505]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 md:gap-8 border-t border-white/10 pt-12">
             {aboutConfig.stats.map((stat, i) => (
               <div key={i} className="stat-item">
-                <p className="museo-headline text-white text-4xl md:text-5xl mb-2">{stat.value}</p>
+                <p className="museo-headline text-white text-4xl lg:text-5xl mb-2">{stat.value}</p>
                 <p className="museo-label text-white/40">{stat.label}</p>
               </div>
             ))}

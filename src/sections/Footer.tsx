@@ -24,7 +24,7 @@ const Footer = () => {
             {[...Array(4)].map((_, i) => (
               <span
                 key={i}
-                className="museo-headline text-white/10 text-[15vw] font-semibold tracking-tight mx-8"
+                className="museo-headline text-white/10 text-[10vw] lg:text-[15vw] font-semibold tracking-tight mx-4 lg:mx-8"
                 style={{ WebkitTextStroke: '1px rgba(255,255,255,0.1)' }}
               >
                 {footerConfig.marqueeText}

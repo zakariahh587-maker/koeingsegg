@@ -40,6 +40,8 @@
   
   html {
     scroll-behavior: auto;
+    overflow-x: hidden;
+    width: 100%;
   }
   
   html.lenis, html.lenis body {
@@ -66,7 +68,13 @@
     @apply bg-[#8c8c91] text-white antialiased;
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
-    cursor: none;
+  }
+
+  /* Only hide cursor on devices that support a mouse/fine-pointer */
+  @media (pointer: fine) {
+    body {
+      cursor: none;
+    }
   }
   
   ::selection {

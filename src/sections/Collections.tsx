@@ -40,6 +40,9 @@ const Collections = () => {
     cards.forEach((card, i) => {
       if (i === cards.length - 1) return; // last card doesn't need pinning
 
+      const isMobile = window.innerWidth < 1024;
+      if (isMobile) return;
+
       // Pin this card in place while the next card scrolls up to cover it
       const trigger = ScrollTrigger.create({
         trigger: card,

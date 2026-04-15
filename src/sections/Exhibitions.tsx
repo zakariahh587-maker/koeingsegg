@@ -39,7 +39,8 @@ const Exhibitions = () => {
     // Card staggered reveal — translate from below + opacity 0.4 -> 1
     const cards = grid.querySelectorAll<HTMLElement>('.exhibit-card');
     cards.forEach((card, i) => {
-      const yOffset = [0, 100, 200, 300][i] || 0;
+      const isMobile = window.innerWidth < 768;
+      const yOffset = isMobile ? 0 : ([0, 100, 200, 300][i] || 0);
       gsap.set(card, { opacity: 0.4, y: yOffset });
 
       const trigger = ScrollTrigger.create({
